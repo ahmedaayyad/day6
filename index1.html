@@ -2,11 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
       .modal2 {
-        display: none; /* Hidden by default */
+        display: none;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -16,7 +17,12 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       }
       .modal2.show2 {
-        display: block; /* Shown when 'show2' class is added */
+        display: block;
+      }
+      /* Custom styles for properties Tailwind doesn’t support natively */
+      [data-custom="backdrop-blur"] {
+        backdrop-filter: blur(2px) brightness(100%);
+        -webkit-backdrop-filter: blur(2px) brightness(100%);
       }
       [data-custom="shadow-modal-close"] {
         box-shadow: 0px 0px 84px #00000080;
@@ -29,6 +35,160 @@
     </script>
   </head>
   <body class="font-['DM_Sans']">
+    <!-- Table Card -->
+    <div class="flex flex-col h-[136px] w-[203.6px] items-start justify-between p-4 bg-[#f7f3f2] rounded-[16px] border-l-[4px] border-solid border-[#D3D3D3] shadow-[0_2px_8px_rgba(0,0,0,0.1)] ml-[20px] mt-[20px]">
+      <div class="flex items-start gap-4 w-full">
+        <div class="flex flex-col items-start flex-1">
+          <div class="text-[24px] font-bold text-black leading-[32px] tracking-[-0.48px] w-full mt-[-1px]">#2001</div>
+          <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] w-full">Ralph Edwards</div>
+        </div>
+      </div>
+      <div class="flex items-end gap-4 w-full">
+        <div class="flex flex-col items-start flex-1">
+          <div class="text-[13px] text-black leading-[16px] w-full mt-[-1px]">Ordered</div>
+          <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] w-full">14 min ago</div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- Tables Section -->
+    <div class="flex flex-col h-[150px] items-center gap-[16px] p-0 bg-[#FFE6E6]">
+      <!-- Row 1 -->
+      <div class="flex items-start gap-[16px] w-full">
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A1</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A2</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-dashed border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A3</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A4</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A5</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A6</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B1</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B2</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B3</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px]详细说明
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B4</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A5</div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="flex items-start gap-[16px] w-full">
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B5</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B6</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C1</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C2</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C3</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C4</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C5</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C6</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C7</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">D1</div>
+        </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C3</div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- Popular Items Frame -->
+    <div class="flex flex-col h-[450px] w-[355px] items-start gap-4 p-4 bg-[rgba(0,0,0,0.05)] rounded-[16px]">
+      <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] mt-[-1px] whitespace-nowrap">Popular Items</div>
+      <div class="flex flex-col items-start gap-[8px] w-full mb-[-2px]">
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <p class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Chicken Burger + French fries</p>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">88</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Mexican Burger</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">74</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Cheese</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">56</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Spicy Bean Burger</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">41</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Potato Gems</div>
+            <div class="flex items-start gap-[8px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">38</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Beer</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">32</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
     <!-- Modal Trigger Button -->
     <button onclick="toggleModal()" class="px-4 py-2 bg-gray-200 rounded">Click here!</button>
 
