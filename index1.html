@@ -28,6 +28,11 @@
         box-shadow: 0px 0px 84px #00000080;
       }
     </style>
+    <script>
+      function toggleModal() {
+        document.getElementById("modal2").classList.toggle("show2");
+      }
+    </script>
   </head>
   <body class="font-['DM_Sans']">
     <!-- Table Card -->
@@ -74,6 +79,7 @@
           <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B1</div>
         </div>
         <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div نبsp;
           <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B2</div>
         </div>
         <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
@@ -184,7 +190,7 @@
     <br><br>
 
     <!-- Modal Trigger Button -->
-    <button onclick="toggleModal()" class="px-4 py-2 bg-gray-200 rounded">Click Me</button>
+    <button onclick="toggleModal()" class="px-4 py-2 bg-gray-200 rounded">Click here!</button>
 
     <!-- Modal -->
     <div id="modal2" class="modal2 flex flex-col w-[360px] items-center bg-[rgba(255,255,255,1)] rounded-[24px] p-5 shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
