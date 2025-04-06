@@ -2,307 +2,218 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      function toggleModal() {
-        document.getElementById("modal2").classList.toggle("show2");
-      }
-    </script>
     <style>
-      /* Modal display logic */
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
       .modal2 {
         display: none;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       }
       .modal2.show2 {
         display: block;
       }
-
-      /* Custom styles from tailwind.config.js */
-      [data-custom-bg] {
-        background-color: #f7f3f2;
-      }
-      [data-custom-border] {
-        border-color: #D3D3D3;
-      }
-      [data-table-bg] {
-        background-color: rgba(255, 255, 255, 0.6);
-      }
-      [data-occupied-border] {
-        border-color: rgba(255, 95, 95, 1);
-      }
-      [data-accepted-border] {
-        border-color: rgba(17, 151, 23, 1);
-      }
-      [data-tables-bg] {
-        background-color: #FFE6E6;
-      }
-      [data-frame-bg] {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-      [data-text-black-60] {
-        color: rgba(0, 0, 0, 0.6);
-      }
-      [data-text-black-100] {
-        color: rgba(0, 0, 0, 1);
-      }
-      [data-semantic-red] {
-        background-color: rgba(225, 14, 14, 1);
-      }
-      [data-modal-text] {
-        color: #333;
-      }
-      [data-subtitle] {
-        color: #666;
-      }
-      [data-modal-border] {
-        border-color: #ddd;
-      }
-      [data-w-203] {
-        width: 203.6px;
-      }
-      [data-w-355] {
-        width: 355px;
-      }
-      [data-w-360] {
-        width: 360px;
-      }
-      [data-w-90] {
-        width: 90px;
-      }
-      [data-h-136] {
-        height: 136px;
-      }
-      [data-h-150] {
-        height: 150px;
-      }
-      [data-h-450] {
-        height: 450px;
-      }
-      [data-h-116] {
-        height: 116px;
-      }
-      [data-h-14] {
-        height: 56px;
-      }
-      [data-h-52] {
-        height: 52px;
-      }
-      [data-backdrop-blur-sm] {
+      /* Custom styles for properties Tailwind doesn’t support natively */
+      [data-custom="backdrop-blur"] {
         backdrop-filter: blur(2px) brightness(100%);
         -webkit-backdrop-filter: blur(2px) brightness(100%);
       }
-      [data-font-dm-sans] {
-        font-family: "DM Sans", Helvetica, sans-serif;
-      }
-      [data-title-2] {
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.48px;
-      }
-      [data-title-3] {
-        font-size: 22px;
-        line-height: 24px;
-        letter-spacing: -0.22px;
-      }
-      [data-headline] {
-        font-size: 20px;
-        line-height: 24px;
-        letter-spacing: -0.2px;
-      }
-      [data-body] {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.16px;
-      }
-      [data-caption] {
-        font-size: 13px;
-        line-height: 16px;
-        letter-spacing: 0px;
+      [data-custom="shadow-modal-close"] {
+        box-shadow: 0px 0px 84px #00000080;
       }
     </style>
+    <script>
+      function toggleModal() {
+        document.getElementById("modal2").classList.toggle("show2");
+      }
+    </script>
   </head>
-  <body>
-    <div class="flex flex-col items-start justify-between p-4 rounded-2xl border-l-4 border-solid shadow-md ml-5 mt-5" data-h-136 data-w-203 data-custom-bg data-custom-border>
+  <body class="font-['DM_Sans']">
+    <!-- Table Card -->
+    <div class="flex flex-col h-[136px] w-[203.6px] items-start justify-between p-4 bg-[#f7f3f2] rounded-[16px] border-l-[4px] border-solid border-[#D3D3D3] shadow-[0_2px_8px_rgba(0,0,0,0.1)] ml-[20px] mt-[20px]">
       <div class="flex items-start gap-4 w-full">
         <div class="flex flex-col items-start flex-1">
-          <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-title-2>#2001</div>
-          <div class="w-full" data-font-dm-sans data-caption data-text-black-60>Ralph Edwards</div>
+          <div class="text-[24px] font-bold text-black leading-[32px] tracking-[-0.48px] w-full mt-[-1px]">#2001</div>
+          <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] w-full">Ralph Edwards</div>
         </div>
       </div>
       <div class="flex items-end gap-4 w-full">
         <div class="flex flex-col items-start flex-1">
-          <div class="w-full text-black -mt-px" data-font-dm-sans data-caption>Ordered</div>
-          <div class="w-full" data-font-dm-sans data-caption data-text-black-60>14 min ago</div>
+          <div class="text-[13px] text-black leading-[16px] w-full mt-[-1px]">Ordered</div>
+          <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] w-full">14 min ago</div>
         </div>
       </div>
-    </div>     
+    </div>
 
     <br><br>
-    
-    <div class="flex flex-col items-center gap-4 px-4" data-h-150 data-tables-bg>
+
+    <!-- Tables Section -->
+    <div class="flex flex-col h-[150px] items-center gap-[16px] p-0 bg-[#FFE6E6]">
       <!-- Row 1 -->
-      <div class="flex items-start gap-4 w-full">
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-occupied-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A1</div>
+      <div class="flex items-start gap-[16px] w-full">
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A1</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-occupied-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A2</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A2</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-dashed" data-w-90 data-h-14 data-table-bg data-occupied-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A3</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-dashed border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A3</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A4</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A4</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A5</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A5</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A6</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A6</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B1</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B1</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B2</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div نبsp;
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B2</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B3</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B3</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B4</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B4</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>A5</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">A5</div>
         </div>
       </div>
-
       <!-- Row 2 -->
-      <div class="flex items-start gap-4 w-full">
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B5</div>
+      <div class="flex items-start gap-[16px] w-full">
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B5</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-occupied-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>B6</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-center justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(255,95,95,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">B6</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C1</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C1</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C2</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C2</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C3</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C3</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C4</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C4</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C5</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C5</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C6</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C6</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C7</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C7</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl" data-w-90 data-h-14 data-table-bg data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>D1</div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">D1</div>
         </div>
-        <div class="flex flex-col items-center justify-center p-3 flex-1 rounded-2xl border-l-4 border-solid" data-w-90 data-h-14 data-table-bg data-accepted-border data-backdrop-blur-sm>
-          <div class="w-full font-medium text-black text-center" data-font-dm-sans data-headline>C3</div>
-        </div>
-      </div>
-    </div>
-
-    <br><br>
-    
-    <div class="flex flex-col items-start gap-4 p-4 rounded-2xl" data-h-450 data-w-355 data-frame-bg>
-      <div class="font-medium text-black whitespace-nowrap -mt-px" data-font-dm-sans data-headline>Popular Items</div>
-      <div class="flex flex-col gap-2 w-full">
-        <div class="flex gap-2 w-full">
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Double Chicken Burger + French fries</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>88</div>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Mexican Burger</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>74</div>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-2 w-full">
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Double Cheese</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>56</div>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Double Spicy Bean Burger</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>41</div>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-2 w-full">
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Potato Gems</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>38</div>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between p-4 flex-1 rounded-2xl" data-h-116 data-table-bg>
-            <div class="w-full font-bold text-black -mt-px" data-font-dm-sans data-caption>Beer</div>
-            <div class="flex items-start gap-1 w-full">
-              <div class="text-[rgba(0,0,0,0.6)] whitespace-nowrap -mt-px" data-font-dm-sans data-caption>Order:</div>
-              <div class="flex-1 font-bold text-black -mt-px" data-font-dm-sans data-caption>32</div>
-            </div>
-          </div>
+        <div class="flex flex-col min-w-[90px] h-[56px] items-start justify-around gap-[24px] p-[12px] flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px] border-l-[4px] border-solid border-[rgba(17,151,23,1)]" data-custom="backdrop-blur">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] text-center w-full">C3</div>
         </div>
       </div>
     </div>
 
     <br><br>
-    
-    <button onclick="toggleModal()" class="px-4 py-2 bg-gray-200 rounded">Click Me</button>
-    
-<div id="modal2" class="modal2 flex flex-col w-[360px] items-center rounded-3xl p-5" data-bg-white-100 data-modal-shadow>
-      <!-- Modal Header -->
-      <div class="w-full flex justify-between items-center pb-3">
-        <div class="text-black" data-font-dm-sans data-title-3>Cancel Item</div>
-        <div class="w-12 h-12 flex items-center justify-center rounded-full cursor-pointer" data-bg-white-100 data-close-shadow>
+
+    <!-- Popular Items Frame -->
+    <div class="flex flex-col h-[450px] w-[355px] items-start gap-4 p-4 bg-[rgba(0,0,0,0.05)] rounded-[16px]">
+      <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] mt-[-1px] whitespace-nowrap">Popular Items</div>
+      <div class="flex flex-col items-start gap-[8px] w-full mb-[-2px]">
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <p class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Chicken Burger + French fries</p>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">88</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Mexican Burger</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">74</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Cheese</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">56</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Double Spicy Bean Burger</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">41</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-[8px] w-full">
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Potato Gems</div>
+            <div class="flex items-start gap-[8px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">38</div>
+            </div>
+          </div>
+          <div class="flex flex-col h-[116px] justify-between p-4 flex-1 bg-[rgba(255,255,255,0.6)] rounded-[16px]">
+            <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] w-full mt-[-1px]">Beer</div>
+            <div class="flex items-start gap-[3px] w-full">
+              <div class="text-[13px] text-[rgba(0,0,0,0.6)] leading-[16px] whitespace-nowrap mt-[-1px]">Order:</div>
+              <div class="text-[13px] font-bold text-[rgba(0,0,0,1)] leading-[16px] flex-1 mt-[-1px]">32</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- Modal Trigger Button -->
+    <button onclick="toggleModal()" class="px-4 py-2 bg-gray-200 rounded">Click here!</button>
+
+    <!-- Modal -->
+    <div id="modal2" class="modal2 flex flex-col w-[360px] items-center bg-[rgba(255,255,255,1)] rounded-[24px] p-5 shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
+      <div class="w-full flex justify-between items-center pb-[12px]">
+        <div class="text-[22px] font-bold text-black leading-[24px] tracking-[-0.22px]">Cancel Item</div>
+        <div class="w-[48px] h-[48px] flex items-center justify-center bg-[rgba(255,255,255,1)] rounded-full cursor-pointer" data-custom="shadow-modal-close">
           <img class="element-close2" src="close.svg" onclick="toggleModal()" />
         </div>
       </div>
-      
-      <!-- Confirmation Message -->
       <div class="w-full">
-        <p class="w-full text-left text-[#333] mb-3" data-font-dm-sans data-body-normal>Are you sure to cancel this item?</p>
-        <div class="bg-white rounded-xl border border-[#ddd] p-[14px] w-full mb-4">
-          <div class="text-black mb-1" data-font-dm-sans data-headline>Tasty Burger</div>
-          <p class="text-[#666]" data-font-dm-sans data-caption-normal>Size: Small, Cheese: A little bit, Salt: No</p>
+        <p class="text-[16px] text-[#333] leading-[24px] tracking-[-0.16px] mb-[12px] text-left">Are you sure to cancel this item?</p>
+        <div class="bg-white rounded-[12px] border border-[#ddd] p-[14px] mb-4 w-full">
+          <div class="text-[20px] font-medium text-[rgba(0,0,0,1)] leading-[24px] tracking-[-0.2px] mb-[4px]">Tasty Burger</div>
+          <p class="text-[13px] text-[#666] leading-[16px]">Size: Small, Cheese: A little bit, Salt: No</p>
         </div>
       </div>
-      
-      <!-- Button Section -->
       <div class="w-full">
-        <button onclick="toggleModal()" class="flex h-[52px] items-center justify-center w-full bg-red-600 text-white rounded-3xl border-none cursor-pointer" data-font-dm-sans data-button-large>
-          <div class="whitespace-nowrap" data-text-white-100>Cancel Items</div>
+        <button onclick="toggleModal()" class="flex h-[52px] items-center justify-center w-full bg-[rgba(225,14,14,1)] text-[rgba(255,255,255,1)] text-[16px] font-bold leading-[24px] tracking-[-0.16px] rounded-[26px] border-none cursor-pointer">
+          <div class="whitespace-nowrap">Cancel Items</div>
         </button>
       </div>
-    </div>  </body>
+    </div>
+  </body>
 </html>
+
+I need (cancel item) to popup ONLY when I press "Click Here".
