@@ -199,32 +199,30 @@
   </button>
 
   <!-- Modal Overlay -->
-  <div id="modal2" class="hidden fixed inset-0 z-50 bg-black bg-opacity-50">
-    <!-- Custom positioned container -->
-    <div class="absolute top-1/2 left-1/2 translate-x-[20%] translate-y-[10%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-full">
-      <!-- Modal Content -->
-      <div class="flex flex-col w-[360px] items-center bg-white rounded-[24px] p-5 shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
-        <div class="w-full flex justify-between items-center pb-[12px]">
-          <div class="text-[22px] font-bold text-black leading-[24px] tracking-[-0.22px]">Cancel Item</div>
-          <div class="w-[48px] h-[48px] flex items-center justify-center bg-white rounded-full cursor-pointer" onclick="toggleModal()">
-            <img class="element-close2" src="close.svg" alt="Close" />
-          </div>
+  <div id="modal2" class="hidden fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-50">
+    <!-- Modal Content -->
+    <div class="flex flex-col w-[360px] items-center bg-white rounded-[24px] p-5 shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
+      <div class="w-full flex justify-between items-center pb-[12px]">
+        <div class="text-[22px] font-bold text-black leading-[24px] tracking-[-0.22px]">Cancel Item</div>
+        <div class="w-[48px] h-[48px] flex items-center justify-center bg-white rounded-full cursor-pointer" onclick="toggleModal()">
+          <img class="element-close2" src="close.svg" alt="Close" />
         </div>
-        <div class="w-full">
-          <p class="text-[16px] text-[#333] leading-[24px] tracking-[-0.16px] mb-[12px] text-left">Are you sure to cancel this item?</p>
-          <div class="bg-white rounded-[12px] border border-[#ddd] p-[14px] mb-4 w-full">
-            <div class="text-[20px] font-medium text-black leading-[24px] tracking-[-0.2px] mb-[4px]">Tasty Burger</div>
-            <p class="text-[13px] text-[#666] leading-[16px]">Size: Small, Cheese: A little bit, Salt: No</p>
-          </div>
+      </div>
+      <div class="w-full">
+        <p class="text-[16px] text-[#333] leading-[24px] tracking-[-0.16px] mb-[12px] text-left">Are you sure to cancel this item?</p>
+        <div class="bg-white rounded-[12px] border border-[#ddd] p-[14px] mb-4 w-full">
+          <div class="text-[20px] font-medium text-black leading-[24px] tracking-[-0.2px] mb-[4px]">Tasty Burger</div>
+          <p class="text-[13px] text-[#666] leading-[16px]">Size: Small, Cheese: A little bit, Salt: No</p>
         </div>
-        <div class="w-full">
-          <button onclick="toggleModal()" class="flex h-[52px] items-center justify-center w-full bg-red-600 text-white text-[16px] font-bold leading-[24px] tracking-[-0.16px] rounded-[26px] border-none cursor-pointer">
-            <div class="whitespace-nowrap">Cancel Items</div>
-          </button>
-        </div>
+      </div>
+      <div class="w-full">
+        <button onclick="toggleModal()" class="flex h-[52px] items-center justify-center w-full bg-red-600 text-white text-[16px] font-bold leading-[24px] tracking-[-0.16px] rounded-[26px] border-none cursor-pointer">
+          <div class="whitespace-nowrap">Cancel Items</div>
+        </button>
       </div>
     </div>
   </div>
+
 
   </body>
 </html>
